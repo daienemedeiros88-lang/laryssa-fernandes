@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laryssa Fernandes — Personal Trainer in Faro, Portugal. Strength, elegance and intention.">
+  
+  <!-- Title -->
+  <title>Laryssa Fernandes | Personal Trainer</title>
+  
+  <!-- Google Fonts and Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+  
+  <!-- ========= Navbar Start ========= -->
+  <nav class="lf-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-monogram">LF</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Laryssa Fernandes</span>
+          <span class="brand-sub">Personal Trainer</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programmes.html">Programmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+          <li class="nav-item ms-lg-3"><a class="navbar-cta text-white" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- ========= Navbar End ========= -->
+
+  <!-- ========= Hero Start ========= -->
+  <section class="hero-section">
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 hero-content">
+          <p class="hero-location reveal">Personal Coaching · Faro, Portugal</p>
+          <h1 class="hero-title reveal reveal-delay-1">
+            Build strength<br>with <em>elegance</em><br>and intention.
+          </h1>
+          <p class="hero-subtitle reveal reveal-delay-2">
+            Personal training designed to help you feel confident, strong, and balanced. A refined coaching experience focused on results, movement quality, and sustainable transformation.
+          </p>
+          <div class="hero-btns reveal reveal-delay-3">
+            <a href="contact.html" class="btn-terra">Get Started</a>
+            <a href="programmes.html" class="btn-ghost">View Programmes</a>
+          </div>
+          <p class="hero-scroll-hint reveal reveal-delay-4">Custom fitness plans for strength, fat loss, mobility and confidence</p>
+        </div>
+        <div class="col-lg-5 offset-lg-1 reveal reveal-delay-2">
+          <div class="signature-card">
+            <p class="signature-card-title">Focus</p>
+            <div class="sig-item">
+              <div class="sig-icon"><i class="fa-solid fa-dumbbell"></i></div>
+              Strength &amp; body sculpting
+            </div>
+            <div class="sig-item">
+              <div class="sig-icon"><i class="fa-solid fa-fire"></i></div>
+              Fat loss coaching
+            </div>
+            <div class="sig-item">
+              <div class="sig-icon"><i class="fa-solid fa-person-running"></i></div>
+              Mobility &amp; conditioning
+            </div>
+            <div class="sig-item">
+              <div class="sig-icon"><i class="fa-solid fa-heart"></i></div>
+              Confidence &amp; consistency
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========= Hero End ========= -->
+
+  <!-- ========= Squat 3D Start ========= -->
+  <section class="squat-3d-section">
+    <div class="container">
+      <div class="squat-3d-inner">
+        <div class="squat-3d-text reveal-left">
+          <span class="pre-label">Training in Motion</span>
+          <h2>Precision movement,<br>powered by <em style="font-style:italic;color:var(--terracotta);">science</em></h2>
+          <div class="gold-line"></div>
+          <p>Every programme is built around correct movement fundamentals — posture, depth, control and progression. This is what purposeful training looks like.</p>
+        </div>
+        <div class="squat-3d-canvas-wrap reveal-right">
+          <!-- Three.js iridescent holographic figure -->
+          <canvas id="squat-canvas"></canvas>
+
+          <!-- Loading spinner (hidden once model is ready) -->
+          <div class="squat3d-loader" id="squat3dLoader">
+            <div class="squat3d-loader-ring"></div>
+            <span>Loading</span>
+          </div>
+
+          <!-- Scanline overlay -->
+          <div class="svg3d-scanline" aria-hidden="true"></div>
+
+          <!-- Ground platform rings -->
+          <div class="svg3d-platform" aria-hidden="true">
+            <div class="svg3d-platform-ring"></div>
+            <div class="svg3d-platform-ring r2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========= Squat 3D End ========= -->
+
+  <!-- ========= About Preview Start ========= -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5">
+          <div class="about-preview-img reveal-left">
+            <img src="assets/images/about.png" alt="Laryssa Fernandes Personal Trainer" class="img-fluid" style="border-radius:14px;object-fit:cover;height:520px;width:100%;">
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-1">
+          <span class="pre-label">About Laryssa</span>
+          <h2>A passion for movement, a commitment to you</h2>
+          <div class="gold-line"></div>
+          <p>Laryssa Fernandes has been passionate about sport from a young age, beginning her journey as part of an athletics team and developing a lifelong commitment to movement and training.</p>
+          <p>She completed a two-year Personal Training course with a clear intention: to help others feel stronger, more confident, and more connected to their bodies.</p>
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <a href="about.html" class="btn-terra">Read My Story</a>
+            <a href="programmes.html" class="btn-outline-terra">View Programmes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= About Preview End ========= -->
+
+  <!-- ========= Programmes Preview Start ========= -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="pre-label">Training Programmes</span>
+        <h2>Find your perfect programme</h2>
+        <div class="gold-line center"></div>
+        <p class="mx-auto" style="max-width:520px;">Whether you're just starting out or looking for a premium coaching experience, there's a programme designed for you.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal reveal-delay-1">
+          <div class="programme-card h-100">
+            <span class="prog-tag">Beginner</span>
+            <h4>Foundations</h4>
+            <p>A structured introduction to strength training. Build confidence, improve movement, and create sustainable habits.</p>
+            <hr class="prog-divider">
+            <div class="prog-price">€160 <span>/ month</span></div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-2">
+          <div class="programme-card featured h-100">
+            <span class="featured-badge">Most Popular</span>
+            <h4>Sculpt &amp; Strength</h4>
+            <p>Build lean muscle, lose fat, and feel stronger. Combines structured strength training with lifestyle guidance.</p>
+            <hr class="prog-divider">
+            <div class="prog-price">€320 <span class="text-white">/ month</span></div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-3">
+          <div class="programme-card h-100">
+            <span class="prog-tag">Premium</span>
+            <h4>Signature Coaching</h4>
+            <p>A fully tailored coaching experience for those who want dedicated support and faster results.</p>
+            <hr class="prog-divider">
+            <div class="prog-price">€520 <span>/ month</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 reveal">
+        <a href="programmes.html" class="btn-outline-terra">See All Programmes &amp; Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= Programmes Preview End ========= -->
+
+  <!-- ========= Testimonials Preview Start ========= -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="pre-label">Client Results</span>
+        <h2>Real transformations, real stories</h2>
+        <div class="gold-line center"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal reveal-delay-1">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <div class="testimonial-avatar-img" style="background: linear-gradient(135deg, #d8a89b, #bb6d57);">S</div>
+              <div class="testimonial-avatar-info">
+                <span class="testimonial-author-name">Sofia M.</span>
+                <span class="testimonial-avatar-tag">Sculpt &amp; Strength</span>
+              </div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">Working with Laryssa has completely changed how I approach training. I feel stronger, more confident, and far more consistent than I've ever been.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-2">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <div class="testimonial-avatar-img" style="background: linear-gradient(135deg, #efb39f, #c68473);">C</div>
+              <div class="testimonial-avatar-info">
+                <span class="testimonial-author-name">Carla R.</span>
+                <span class="testimonial-avatar-tag">Foundations</span>
+              </div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">I came wanting to lose weight, but I gained so much more — strength, energy, and confidence. Her approach is structured but supportive.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal reveal-delay-3">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <div class="testimonial-avatar-img" style="background: linear-gradient(135deg, #ead6cf, #d8a89b);">M</div>
+              <div class="testimonial-avatar-info">
+                <span class="testimonial-author-name">Mariana S.</span>
+                <span class="testimonial-avatar-tag">Signature Coaching</span>
+              </div>
+            </div>
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">Laryssa creates such a calm and motivating environment. I always feel comfortable, even when I'm being pushed. The results have been incredible.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 reveal">
+        <a href="results.html" class="btn-outline-terra">Read All Stories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= Testimonials Preview End ========= -->
+
+  <!-- ========= CTA Banner Start ========= -->
+  <section class="section-pad parallax-section" style="background: var(--terracotta);">
+    <div class="container text-center parallax-content">
+      <span class="pre-label" style="color:rgba(255,255,255,0.7);">Ready to begin?</span>
+      <h2 class="text-white mb-3" style="font-size:clamp(2rem,5vw,3.5rem);">Your transformation starts with one session.</h2>
+      <p class="mb-4" style="color:rgba(255,255,255,0.75);max-width:480px;margin-inline:auto;">Book your first session today and discover what training with intention truly feels like.</p>
+      <a href="contact.html" class="btn-ghost">Book a Session</a>
+    </div>
+  </section>
+
+  <!-- ========= CTA Banner End ========= -->
+
+  <!-- ========= Footer Start ========= -->
+  <footer class="lf-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="footer-brand-name">Laryssa Fernandes</div>
+          <span class="footer-brand-sub">Personal Trainer · Faro, Portugal</span>
+          <p class="footer-tagline">"Build strength with elegance and intention."</p>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-2">
+          <p class="footer-nav-title">Navigate</p>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programmes.html">Programmes</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="footer-nav-title">Programmes</p>
+          <ul class="footer-nav-list">
+            <li><a href="programmes.html">Foundations</a></li>
+            <li><a href="programmes.html">Sculpt &amp; Strength</a></li>
+            <li><a href="programmes.html">Signature Coaching</a></li>
+            <li><a href="programmes.html">Online Coaching</a></li>
+            <li><a href="programmes.html">Express Session</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <p class="footer-nav-title">Connect</p>
+          <div class="footer-social">
+            <a class="footer-social-link" href="https://www.instagram.com/lfernandespt?igsh=Y2NwMXB6cHp6eTRk" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="footer-social-link" href="https://www.tiktok.com/@lfernandespt" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <p class="footer-copy mb-0">© <span class="copyright-year"></span> Laryssa Fernandes. All rights reserved.</p>
+        <p class="footer-copy mb-0">Faro, Portugal</p>
+      </div>
+    </div>
+  </footer>
+  <!-- ========= Footer End ========= -->
+
+
+  <!-- ========= Back to Top ========= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Three.js + GLTFLoader for iridescent 3D figure -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+  <!-- Iridescent figure -->
+  <script src="assets/js/squat3d.js"></script>
+</body>
+</html>
