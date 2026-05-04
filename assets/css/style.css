@@ -1295,3 +1295,132 @@ img {
   .squat-3d-inner { grid-template-columns: 1fr; gap: 2rem; }
   .squat-3d-canvas-wrap { height: 380px; }
 }
+
+/* ============================================================
+   SUCCESS MODAL
+   ============================================================ */
+.lf-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 38, 36, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lf-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lf-modal {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(45,38,36,0.18), 0 4px 16px rgba(187,109,87,0.12);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.lf-modal-backdrop.active .lf-modal {
+  transform: translateY(0) scale(1);
+}
+.lf-modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--peach), var(--terracotta));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-size: 1.6rem;
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(187,109,87,0.3);
+}
+.lf-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+.lf-modal-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+.lf-modal-close {
+  border: none;
+  cursor: pointer;
+  min-width: 140px;
+  font-size: 0.82rem;
+}
+
+/* ============================================================
+   BACK TO TOP BUTTON
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 20px rgba(187,109,87,0.4);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  background: var(--terracotta-d, #a05a45);
+  transform: translateY(-3px);
+}
+
+/* ── Programme Dropdown Select ── */
+.lf-select-wrap {
+  position: relative;
+}
+.lf-select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  background: var(--card, #fff);
+  color: var(--ink);
+}
+.lf-select option[value=""] {
+  color: var(--muted);
+}
+.lf-select-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--terracotta);
+  font-size: 0.78rem;
+  pointer-events: none;
+}

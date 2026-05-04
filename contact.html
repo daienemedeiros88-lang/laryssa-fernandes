@@ -133,26 +133,18 @@
                 <input type="tel" class="form-control" id="phone" name="phone" placeholder="+351 000 000 000">
               </div>
               <div class="col-12">
-                <label>Interested Programme</label>
-                <div class="mt-1">
-                  <label class="programme-select-card">
-                    <input type="radio" name="programme" value="Foundations"> Foundations
-                  </label>
-                  <label class="programme-select-card">
-                    <input type="radio" name="programme" value="Sculpt & Strength"> Sculpt &amp; Strength
-                  </label>
-                  <label class="programme-select-card">
-                    <input type="radio" name="programme" value="Signature Coaching"> Signature Coaching
-                  </label>
-                  <label class="programme-select-card">
-                    <input type="radio" name="programme" value="Online Coaching"> Online Coaching
-                  </label>
-                  <label class="programme-select-card">
-                    <input type="radio" name="programme" value="Express Session"> Express Session
-                  </label>
-                  <label class="programme-select-card">
-                    <input type="radio" name="programme" value="Not sure yet"> Not sure yet — help me choose!
-                  </label>
+                <label for="programme">Interested Programme</label>
+                <div class="lf-select-wrap">
+                  <select class="form-control lf-select" id="programme" name="programme">
+                    <option value="" disabled selected>Select a programme…</option>
+                    <option value="Foundations">Foundations</option>
+                    <option value="Sculpt & Strength">Sculpt &amp; Strength</option>
+                    <option value="Signature Coaching">Signature Coaching</option>
+                    <option value="Online Coaching">Online Coaching</option>
+                    <option value="Express Session">Express Session</option>
+                    <option value="Not sure yet — help me choose!">Not sure yet — help me choose!</option>
+                  </select>
+                  <span class="lf-select-arrow"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
               </div>
               <div class="col-12">
@@ -225,19 +217,46 @@
   <!-- ========= Footer End ========= -->
   
 
+  <!-- ========= Back to Top ========= -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ========= Success Modal ========= -->
+  <div class="lf-modal-backdrop" id="successModalBackdrop" aria-hidden="true">
+    <div class="lf-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="lf-modal-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 class="lf-modal-title" id="modalTitle">Message Sent!</h3>
+      <p class="lf-modal-body">Thank you for reaching out. Laryssa reads every message personally and will get back to you within 24–48 hours.</p>
+      <button class="lf-modal-close btn-terra" id="modalCloseBtn">Got it</button>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Programme card visual selection
-    document.querySelectorAll('.programme-select-card').forEach(card => {
-      card.addEventListener('click', () => {
-        document.querySelectorAll('.programme-select-card').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-      });
+    // Close modal on backdrop click
+    document.getElementById('successModalBackdrop').addEventListener('click', function(e) {
+      if (e.target === this) closeSuccessModal();
     });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSuccessModal();
+    });
+
+    function closeSuccessModal() {
+      const backdrop = document.getElementById('successModalBackdrop');
+      backdrop.classList.remove('active');
+      backdrop.setAttribute('aria-hidden', 'true');
+    }
+
+    document.getElementById('modalCloseBtn').addEventListener('click', closeSuccessModal);
   </script>
 </body>
 </html>

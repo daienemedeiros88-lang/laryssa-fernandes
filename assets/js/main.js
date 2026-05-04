@@ -57,23 +57,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       if (!valid) return;
+
       const btn = form.querySelector('[type="submit"]');
-      const msg = document.getElementById('formSuccess');
       btn.disabled = true;
-      btn.textContent = 'Sending...';
+      btn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Sending...';
+
       try {
-        const res = await fetch('https://formspree.io/f/xpwdopwy', {
-          method: 'POST', body: new FormData(form),
+        const formData = new FormData(form);
+        formData.append('access_key', '4d7edc52-f514-4520-9a1a-260798a81d10');
+        formData.append('subject', 'New Enquiry — Laryssa Fernandes PT Website');
+        formData.append('from_name', 'Laryssa Fernandes Website');
+
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
           headers: { 'Accept': 'application/json' }
         });
+
         if (res.ok) {
           form.reset();
-          if (msg) msg.style.display = 'block';
+
+          // Show success modal
+          const backdrop = document.getElementById('successModalBackdrop');
+          if (backdrop) {
+            backdrop.classList.add('active');
+            backdrop.setAttribute('aria-hidden', 'false');
+          }
+        } else {
+          btn.innerHTML = '<i class="fa fa-exclamation-circle me-2"></i>Something went wrong — please try again';
         }
-      } catch {}
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
+      } catch {
+        btn.innerHTML = '<i class="fa fa-exclamation-circle me-2"></i>Connection error — please try again';
+      }
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa fa-paper-plane me-2"></i>Send Message';
+      }, 3000);
     });
+
     form.querySelectorAll('input, textarea').forEach(el => {
       el.addEventListener('input', () => el.classList.remove('is-invalid'));
     });
