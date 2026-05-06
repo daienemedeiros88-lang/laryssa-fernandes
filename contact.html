@@ -155,7 +155,7 @@
               <div class="col-12 mt-2">
                 <div class="my-3">
                   <input type="checkbox" id="consent">
-                  <label for="consent" >I agree to the <a href="privacy-policy.html" target="_blank"> Terms and Conditions </a> and consent to having my data processed. </label>
+                  <label for="consent" >I agree to the <a class="text-decoration-underline" href="#termsModal"  data-bs-toggle="modal" data-bs-target="#termsModal"> Terms and Conditions </a> and consent to having my data processed. </label>
                 </div>
                 <button type="submit" class="btn-terra w-100" style="border:none;cursor:pointer;font-size:0.85rem;padding:1rem;">
                   <i class="fa fa-paper-plane me-2"></i>Send Message
@@ -237,6 +237,76 @@
       <button class="lf-modal-close btn-terra" id="modalCloseBtn">Got it</button>
     </div>
   </div>
+
+  <!-- Terms and Conditions -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="border-radius: var(--radius-sm); border: none; overflow: hidden">
+            <div class="modal-header" style="border-bottom: 1px solid rgba(187, 109, 87, 0.15)">
+                <h5
+                    class="modal-title"
+                    id="termsModalLabel"
+                    style="
+                        font-family: &quot;Cormorant Garamond&quot;, serif;
+                        font-size: 1.8rem;
+                        color: var(--ink);
+                        text-transform: none;
+                        letter-spacing: normal;
+                    "
+                >
+                    Terms &amp; Conditions
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div
+                class="modal-body"
+                style="
+                    color: var(--muted);
+                    font-size: 0.92rem;
+                    line-height: 1.7;
+                    text-transform: none;
+                    letter-spacing: normal;
+                "
+            >
+                <p>
+                    By submitting this form, you agree that Laryssa Fernandes may use the information you provide to
+                    respond to your enquiry about personal training, coaching, programmes, or related services.
+                </p>
+                <p>
+                    The information collected may include your name, email address, phone number, selected programme,
+                    and message. This information will only be used to contact you regarding your enquiry.
+                </p>
+                <p>
+                    Your personal information will not be sold or shared with third parties for marketing purposes. It
+                    may only be shared where required by law or where necessary to provide requested services.
+                </p>
+                <p>You are responsible for ensuring that any information you provide is accurate and up to date.</p>
+                <p>
+                    Submitting this form does not create a client relationship or guarantee availability for any
+                    programme or service.
+                </p>
+                <p>
+                    You may request access, correction, or deletion of your personal data by contacting Laryssa
+                    Fernandes directly.
+                </p>
+                <p style="margin-bottom: 0">
+                    By ticking the checkbox, you confirm that you have read and agree to these Terms &amp; Conditions.
+                </p>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgba(187, 109, 87, 0.15)">
+                <button
+                    type="button"
+                    class="btn-terra"
+                    data-bs-dismiss="modal"
+                    style="border: none; cursor: pointer; padding: 0.8rem 1.4rem"
+                >
+                    I Understand
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
   <!-- Bootstrap JS -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
