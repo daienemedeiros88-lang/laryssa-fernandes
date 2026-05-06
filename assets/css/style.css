@@ -770,7 +770,6 @@ img {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 0.4rem;
 }
